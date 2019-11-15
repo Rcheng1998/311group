@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Sprint1intoSprint2.jar" size="22842" download="eager" />
+    <jar href="Sprint1intoSprint2.jar" size="25970" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="Sprint1intoSprint2" >
     <param name="requiredFXVersion" value="2.2+"/>

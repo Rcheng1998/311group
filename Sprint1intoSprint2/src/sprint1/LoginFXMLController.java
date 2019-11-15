@@ -9,7 +9,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -39,8 +38,8 @@ public class LoginFXMLController implements Initializable {
         if(authenticated)
         {
             Stage primaryStage = new Stage();
-            Parent test = FXMLLoader.load(getClass().getResource("NavFXML.fxml"));
-            Scene scene = new Scene(test, 500, 400);
+            Parent test = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+            Scene scene = new Scene(test, 850, 500);
             primaryStage.setTitle("Main Menu");
             primaryStage.setScene(scene);
             primaryStage.show();  
