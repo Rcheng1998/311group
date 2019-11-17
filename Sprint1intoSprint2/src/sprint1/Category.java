@@ -5,9 +5,9 @@ public class Category {
     String name;
     String branch;
     //make branch 4 pre defined things?^
-    int numNotes;
+    String numNotes;
 
-    public Category(String name, String branch, int numNotes) {
+    public Category(String name, String branch, String numNotes) {
         this.name = name;
         this.branch = branch;
         this.numNotes = numNotes;
@@ -38,11 +38,11 @@ public class Category {
         this.branch = branch;
     }
 
-    public int getNumNotes() {
+    public String getNumNotes() {
         return numNotes;
     }
 
-    public void setNumNotes(int numNotes) {
+    public void setNumNotes(String numNotes) {
         this.numNotes = numNotes;
     }
 }

@@ -46,14 +46,22 @@ public class NavUIController implements Initializable {
     }
     public void leftCategoryPressed(ActionEvent event) throws IOException{
             URL url = new File("src/sprint1/CategoryUI.fxml").toURI().toURL();
-            Stage categoryStage = new Stage();
+            /*Stage categoryStage = new Stage();
             Parent categoryParent = FXMLLoader.load(url);
             Scene scene = new Scene(categoryParent, 850, 500);
             categoryStage.setTitle("Category");
             categoryStage.setScene(scene);
             categoryStage.show();  
             ticketList.getScene().getWindow().hide();
-            System.out.println("Authenticated");
+            System.out.println("Authenticated");*/
+           
+           Parent tableViewParent = FXMLLoader.load(url);
+           Scene tableViewScene = new Scene(tableViewParent);
+           
+           Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+           
+           window.setScene(tableViewScene);
+           window.show();
     }
     
     @FXML protected void leftUserPressed(ActionEvent event) throws IOException
