@@ -15,6 +15,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import sprint1.Category;
+import sprint1.CategoryList;
 
 public class CategoryUIController implements Initializable {
     
@@ -36,21 +37,16 @@ public class CategoryUIController implements Initializable {
         categoryBranch.setCellValueFactory(new PropertyValueFactory<Category, String>("branch"));
         categoryTickets.setCellValueFactory(new PropertyValueFactory<Category, String>("numNotes"));
         
-        tableView.getItems().setAll(getCategory());
+        tableView.getItems().setAll(getCategoryList());
         
         System.out.println("I am in categoryUI controller");
     }    
     
-    public ObservableList<Category> getCategory(){
-        ObservableList<Category> categoryList = FXCollections.observableArrayList();
-        categoryList.add(new Category("Flood", "Police, EMS", "21"));
-        categoryList.add(new Category("Fire", "Police, EMS, Firefighters", "25"));
-        categoryList.add(new Category("Earthquake", "Police, EMS", "41"));
+    public ObservableList<Category> getCategoryList(){
+        CategoryList categoryList = new CategoryList();
         
-        System.out.println(categoryList);
-        
-        return categoryList;
-        
+        return categoryList.getList();
+      
     }
     
     @FXML protected void leftTicketPressed(ActionEvent event) throws IOException
