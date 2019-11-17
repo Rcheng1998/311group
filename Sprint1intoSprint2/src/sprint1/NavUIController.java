@@ -5,14 +5,20 @@
  */
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
 /**
  *
@@ -38,10 +44,18 @@ public class NavUIController implements Initializable {
     {
         
     }
-    @FXML protected void leftCategoryPressed(ActionEvent event) throws IOException
-    {
-        
+    public void leftCategoryPressed(ActionEvent event) throws IOException{
+            URL url = new File("src/sprint1/CategoryUI.fxml").toURI().toURL();
+            Stage categoryStage = new Stage();
+            Parent categoryParent = FXMLLoader.load(url);
+            Scene scene = new Scene(categoryParent, 850, 500);
+            categoryStage.setTitle("Category");
+            categoryStage.setScene(scene);
+            categoryStage.show();  
+            ticketList.getScene().getWindow().hide();
+            System.out.println("Authenticated");
     }
+    
     @FXML protected void leftUserPressed(ActionEvent event) throws IOException
     {
         

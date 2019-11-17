@@ -37,14 +37,7 @@ public class LoginFXMLController implements Initializable {
         boolean authenticated = authenticateUser();
         if(authenticated)
         {
-            Stage primaryStage = new Stage();
-            Parent test = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
-            Scene scene = new Scene(test, 850, 500);
-            primaryStage.setTitle("Main Menu");
-            primaryStage.setScene(scene);
-            primaryStage.show();  
-            userName.getScene().getWindow().hide();
-            System.out.println("Authenticated");
+            authenticatedNew();
         }
         else
         {
@@ -56,6 +49,17 @@ public class LoginFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+    
+    private void authenticatedNew() throws IOException{
+        Stage primaryStage = new Stage();
+        Parent test = FXMLLoader.load(getClass().getResource("NavUI.fxml"));
+        Scene scene = new Scene(test, 850, 500);
+        primaryStage.setTitle("Main Menu");
+        primaryStage.setScene(scene);
+        primaryStage.show();  
+        userName.getScene().getWindow().hide();
+        System.out.println("Authenticated");
     }
     public boolean authenticateUser()
     {
